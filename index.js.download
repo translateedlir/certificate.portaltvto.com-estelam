@@ -1,0 +1,80 @@
+﻿//$(document).ready(function(){
+
+
+
+
+function postAjax(href_url,form_id,div_id)
+{
+  //var postUrl = $("#"+form_id).attr('action');
+  
+  $.post(  
+  	  href_url,  
+	  $("#"+form_id).serialize(),  
+	  function(responseText)
+	  {
+	  	$("#"+div_id).html(responseText);
+  	  },  
+  	   "html"  
+  );  
+}
+
+
+
+function getAjax(href_url,div_id)
+{
+  $("#"+div_id)
+  .load(href_url, null, function(responseText,msg,xhrObj){
+   });
+}
+
+/*function a_rel_post_sajadAjax(div_id)
+{
+  $('a[rel|="sajadAjax"]').unbind('click');
+  
+  $('a[rel|="sajadAjax"]').click(function()
+  {
+  	postAjax(this.href,this.form,div_id);
+  	return false;
+  });
+}*/
+function a_rel_get_sajadAjax(div_id)
+{
+  $('a[rel|="sajadAjax"]').unbind('click');
+  
+  $('a[rel|="sajadAjax"]').click(function()
+  {
+  	getAjax(this.href,div_id);
+  	return false;
+  });
+}
+
+function a_pagination_post_Ajax(div_id,form_id)
+{
+	
+  $('.pagination_tag_open a, .pagination a, .cform_sort_field a').unbind('click');
+  
+  $('.pagination_tag_open a, .pagination a, .cform_sort_field a').click(function()
+  {
+	  //postAjax(,form_id,div_id);
+	  
+	    $.post(  
+			  this.href,  
+			  $("#"+form_id).serialize()+'&cform_sort_link='+$(this).attr('id'),  
+			  function(responseText)
+			  {
+				$("#"+div_id).html(responseText);
+				FarsiType.init();
+			  },  
+			   "html"  
+		  );  
+
+	  return false;
+	  //postAjax(div_id,form_id);
+  });
+  
+}
+
+a_rel_get_sajadAjax('leftside');	
+
+
+//});
