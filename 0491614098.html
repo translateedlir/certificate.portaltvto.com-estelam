@@ -1,0 +1,372 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0084)https://azmoon.portaltvto.com/estelam/estelam/index/0062986163/9200736434/1408-05-08 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<noscript>
+
+	<meta http-equiv="refresh" content="0;url=https://azmoon.portaltvto.com/user/user_manage/userLogout/"> 
+
+</noscript>
+
+
+
+<link rel="shortcut icon" type="x-icon" href="https://azmoon.portaltvto.com/favicon.ico">
+
+<link href="main_site.css" rel="stylesheet" type="text/css">
+<link href="superfish.css" rel="stylesheet" type="text/css">
+<link href="superfish-vertical.css" rel="stylesheet" type="text/css">
+<script type="javascript" src="jquery-1.6.1.min.js.download"></script><script type="javascript" src="jquery.validate.js.download"></script><script type="javascript" src="FarsiType.js.download"></script><script type="javascript" src="calendar.js.download"></script><script type="javascript" src="jalali.js.download"></script><script type="javascript" src="calendar-setup.js.download"></script><script type="javascript" src="calendar-fa.js.download"></script><link href="calendar-system.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+
+.mainContainer .leftSide{
+
+	width:98%;
+
+}
+
+.mainContainer .rightSide{
+
+	width:140px;
+
+}
+
+</style>
+
+
+
+<script type="text/javascript" src="hoverIntent.js.download"></script>
+
+<script type="text/javascript" src="superfish.js.download"></script>
+
+<script type="text/javascript" src="index.js.download"></script>
+
+<script type="text/javascript" src="dFilter.js.download"></script>
+
+
+
+
+
+<!--[if IE 6]>
+
+<style type="text/css">
+
+ul.sf-menu li ul,
+
+ul.sf-menu li ul li,
+
+ul.sf-menu li ul li a
+
+{
+
+	width:150px;
+
+}
+
+.topSelect
+
+{
+
+	width:100px;
+
+}
+
+.mainContainer .leftSide
+
+{
+
+	width:800px;
+
+}
+
+</style>
+
+<![endif]-->
+
+
+
+
+
+<script type="text/javascript">
+
+
+
+var topSelectValue = '';
+
+	// initialise Menu plugins-By ahmadJ
+
+jQuery(function(){
+
+	jQuery('ul.sf-menu').superfish({
+
+		 animation: {height:'show'},
+
+		 delay	: 300
+
+	});
+
+	//masking Dates input
+
+$(".CForm_Date").mask("9999-99-99");
+
+$(".CForm_TIME").mask("99:99");
+
+
+
+
+
+/*$(".sf-menu a").click(function(){
+
+$("#leftside").load(this.href);
+
+return false;
+
+})*/
+
+
+
+});
+
+</script>
+
+
+
+<title>سامانه کارت ورود به جلسه و اعلام نتایج</title>
+
+</head>
+
+<body>
+
+<div align="center">
+
+<div class="hamid" id="shadow_box">
+<div class="container" align="center" id="container">
+
+    
+            <script type="javascript">
+            $(document).ready(function(){
+			var send_once = true;
+			var comp_once = true;	
+            $("*")
+            .bind("ajaxSend", function(){
+				if(send_once)
+				{
+					/*alert("ajaxSend");*/
+					$(".mainContainer").append('<div class="ui-widget-overlay"></div>');
+					$(".CForm_loading_div").show();
+					send_once = false;
+					comp_once = true;
+				}
+        
+            })
+            .bind("ajaxComplete", function()
+			{
+				if(comp_once)
+				{
+					/*alert("ajaxComplete");*/
+					$(".ui-widget-overlay").remove();
+					$(".CForm_loading_div").hide();
+					comp_once = false;
+					send_once = true;
+				}
+            });
+            });
+            </script>
+        <div class="CForm_loading_div" style="display:none; z-index:100002">
+		در حال بارگذاری ...
+        
+        </div>
+	<div class="topContainer">
+
+    	<div class="banner"></div>
+
+    </div>
+
+    <div class="eduMenu">
+
+    	<div class="dateAndTime" dir="rtl">
+
+
+IP:<span id="ip"></span>
+<span id="date"></span><span id="time"></span>
+
+<script>
+
+
+function updateTime() {
+const now = new Date();
+document.getElementById("time").innerText =
+now.toLocaleTimeString("fa-IR");
+document.getElementById("date").innerText =
+now.toLocaleDateString("fa-IR");
+}
+
+setInterval(updateTime, 1000);
+updateTime();
+
+fetch("https://api.ipify.org?format=json")
+.then(res => res.json())
+.then(data => {
+document.getElementById("ip").innerText = data.ip;
+})
+.catch(() => {
+document.getElementById("ip").innerText = "خطا در دریافت IP";
+});
+
+</script>
+
+        	
+
+        </div>
+            
+            <ul id="mainlevel-nav">
+
+                <li><a href="https://azmoon.portaltvto.com/">صفحه اصلی</a></li>
+                
+                                
+                <li><a href="https://azmoon.portaltvto.com/public/dashboard/">مدیریت </a></li>								
+                <li><a href="https://azmoon.portaltvto.com/estelam/estelam">نمایش گواهینامه با شماره شناسنامه</a></li>
+                <li><a href="https://azmoon.portaltvto.com/estelam/estelam/indexnoprint">استعلام  شماره گواهینامه</a></li>
+                <li><a href="https://azmoon.portaltvto.com/result/result/public_pg_amali">آزمون عملی </a></li>
+                             </ul>
+    </div>
+
+    
+
+	<div class="mainContainer">
+
+    	    
+        
+        
+
+        <div class="leftSide" align="right" id="leftside">
+
+        	
+
+			
+        	<script language="javascript">var myFiles=Array();
+var pws=Array();myFiles["1997864"]=true;
+pws["1997864"]='pws1';
+myFiles["2767947"]=true;
+pws["2767947"]='pws1';
+myFiles["19991754"]=true;
+pws["19991754"]='pws1';
+myFiles["40243541"]=true;
+pws["40243541"]='pws1';
+</script>
+<style>
+    #od_type{
+        width: 350px;
+    }
+	h1{
+		font-size:2em;
+		color:red;
+		font-family: Titr, Nazanin, Tahoma;
+	}
+	ul.cc,li.cc {
+		margin: 8px;
+		font-size:13pt;
+		color:#900000;
+		font-family: Titr, Nazanin, Tahoma;
+	}
+        .HFormError{
+            color: #900000;
+            margin-right: 10px;
+        }
+        hr {
+          border-top: 1px dotted #f00;
+          color: #fff;
+          background-color: #fff;
+          height: 1px;
+          width:50%;
+        }
+        h2{
+            color: #f00;
+            font-size: medium;
+        }
+</style>
+<p>
+<script type="javascript" src="jquery.printElement.min.js.download"></script>	</p><form method="post" name="shop_form" id="shop_form" action="https://azmoon.portaltvto.com/pay/licence/shop/">
+       <div style="overflow-x:scroll">
+         <br><a onclick="window.open(&#39;http://www.portaltvto.com/validsites/validsites2/index2/0062986163&#39;)" href="https://azmoon.portaltvto.com/estelam/estelam/index/0062986163/9200736434/1408-05-08#" target="blank">دریافت نماد مهارت الکترونیک</a><br><table border="1" class="CForm_ViewItesmGrid CForm_corner-bottom"><thead><tr><th>شماره</th><th>چاپ-کیفیت متوسط</th><th>نام آزمون</th><th>کد ملی/شماره پاسپورت</th><th>شماره گواهی الکترونیک</th><th>نام</th><th>نام خانوادگی</th><th>نام پدر</th><th>شماره شناسنامه</th><th>استاندارد</th><th>کد استاندارد</th><th>ساعت</th><th>زمان آزمون</th><th>اداره کل</th><th>مرکز</th><th>کارگاه/آموزشگاه</th></tr></thead><tbody>
+
+<tr class="row1"><td><a href="48727584.pdf" target="blank" class="click" alt="">48727584</a></td><td><a href="48727584.jpg" target="blank" class="click" alt=""><img src="printer_green.png" alt=""></a></td><td>1403 هماهنگ مرحله ششم</td><td>0491614098</td><td>48741069</td><td>زهرا</td><td>فرخی</td><td>محمداسمعیل</td><td>168</td><td>صنایع دستی (بافت) - مروارید بافی)</td><td>731820750000071</td><td>80</td><td>1402/12/20</td><td>تهران</td><td>مرکز شماره هشت شمیرانات (دو منظوره، زعفرانیه)</td><td>آریا تهران</td></tr>
+
+<tr class="row0"><td><a href="48741069.pdf" target="blank" class="click" alt="">48741069</a></td><td><a href="48741069.jpg" target="blank" class="click" alt=""><img src="printer_green.png" alt=""></a></td><td>1403 هماهنگ مرحله ششم</td><td>0491614098</td><td>48741069</td><td>زهرا</td><td>فرخی</td><td>محمداسمعیل</td><td>168</td><td>خدمات تغذیه ای (آشپزی) - آشپز درجه 1 (یک)</td><td>512010670040001</td><td>105</td><td>1402/06/25</td><td>تهران</td><td>مرکز شماره هشت شمیرانات (دو منظوره، زعفرانیه)</td><td>آریا تهران</td></tr>
+
+
+
+
+</tbody><tfoot><tr><td colspan="16">&nbsp;</td></tr>  </tfoot></table>       </div>
+
+        </form>
+        </div>
+<script type="text/javascript">     
+jQuery(document).ready(function(){    /*$('a.click').unbind('click');
+    $("a.click").click(function(){
+        var value = $(this).val();
+        alert(value);
+        return false;
+    });*/
+    var res = '';
+    var recid=0;	
+	//print_r(this.href.substring(0,25));die();
+    $('a').each(function(){
+        //alert(this.href.substring(0,25));
+	
+        if(this.href.substring(0,25)=='http://46.209.76.121:8001'){
+            res = this.href.substring(44);			
+            recid = /*Number*/(res.substring(0,res.length-4));
+            //alert(pws[recid]);			
+            if(pws[recid]=='pws3'){
+                this.href = this.href.replace('http://46.209.76.121:8001', 'http://192.160.2.31');
+                //alert(this.href);			
+            }			
+            else{
+				
+                this.href = this.href.replace('http://46.209.76.121:8001', 'http://'+pws[recid]+'.portaltvto.com');
+            }
+
+            //alert(this.href);
+        }
+    });
+});
+</script>
+
+            
+
+		</div>
+
+	    <div class="clr"></div>
+
+    </div>
+
+	<!--<div class="mainContainer">-->
+
+    	<div class="footer CForm_corner-bottom">
+
+             <br>   
+
+        	 <br>
+
+           <br>
+
+        </div>
+
+    <!--</div>-->
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</body></html>
